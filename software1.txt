@@ -1,2 +1,2 @@
 Today we learn how to use git.
-Git is a wonderfui software for students.
+Git is a wonderfui software for college students.
