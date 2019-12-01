@@ -1,5 +1,5 @@
 //线性表元素查询
-
+//此代码段为实验一代码段
 #include<stdio.h>
 #include<stdlib.h>
 #define date_size 100
@@ -33,7 +33,8 @@ int intput(sq *s)
 		s->size += date_add;
 	}
 	for(j = s->length-1;j>=i-1;j--)
-		s->address[j+1] = s->address[j];
+        s->address[j+1] = s->address[j];
+        
 		s->address[i-1]= e;
 		++s->length;
 		return 1;
