@@ -1,43 +1,72 @@
-/*大小端转换函数*/
-/*函数功能： 将输入的 origindata 进行大小端转换*/
-/*要求：
-  1.通过代码阅读，清楚该函数的作用
-  2.该函数存在明显 bug， 请找出并修复
-  3.自建一个 origindata，修复 bug 后运行输出结果*/
+//这是杨辉三角
 
-int rawdata_to_little_endian(uint8_t *origindata,
-        uint32_t row_num, uint32_t row_size) {
-    gf_error_t err = GF_SUCCESS;
-    uint32_t row = 0;
-    uint32_t i = 0;
-    uint32_t index = 0;
-    uint8_t *buffer = NULL;
-    FUNC_ENTER();
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
 
-    do {
-        if (NULL == origindata) {
-            err = -1;
-            break;
-        }
-        
-        for (row = 0; row < row_num; row++) {
-            while(row)
-            {
-            }
-            index = row * row_size + 4 * row + 2;
-            buffer = &origindata[index];
-
-            for (i = 0; i < row_size;) {
-                buffer[i] ^= buffer[i + 1];
-                buffer[i + 1] ^= buffer[i];
-                buffer[i] ^= buffer[i + 1];
-                buffer[i + 2] ^= buffer[i + 3];
-                buffer[i + 3] ^= buffer[i + 2];
-                buffer[i + 2] ^= buffer[i + 3];
-                i += 4;
-            }
-        }
-    } while (0);
-
-    return 0;
+#define MAXQSIZE 200
+typedef int QElemType;
+typedef struct {
+    QElemType  *base;
+    int frt;//第一个错 这个改为 int front;
+    int rar;//第二个错 这个改为 int rear;
+}SqQueue;
+void InitQueue(SqQueue *Q){
+    
+    Q->base=(QElemType *)malloc(MAXQSIZE*sizeof(QElemType));
+    if(!Q->base)exit(0);//第三个错 这个改为 if(!Q->base)exit(1);
+    Q->front=Q->rear=0;
 }
+int QueueLength(SqQueue *Q){
+    
+    int e;
+    e=(Q->rear-Q->front+MAXQSIZE)%MAXQSIZE;
+    return ;//第四个错 这个改为 return e;
+}
+void EnQueue(SqQueue *Q,QElemType e){
+    
+    if((Q->rear+1)%MAXQSIZE ==Q->front) exit(0); //第五个错 这个改为exit(1);
+    Q->base[Q->rear]=e;
+    Q->rear=(Q->rear+1)%MAXQSIZE;
+}
+void DeQueue(SqQueue *Q){
+    
+    if(Q->front==Q->rear)
+        exit(0); //第六个错 这个改为exit(1);
+    //e=Q.base[Q.front];
+    Q->front=(Q->front+1)%MAXQSIZE;
+}
+QElemType GetHead(SqQueue *Q){
+    
+    return Q->base[Q->front];
+}
+int main(){
+    int a,n,c;
+    QElemType t,x;
+    SqQueue f,*Q;
+    Q=&f;
+    InitQueue(Q);
+    printf("请输入杨辉三角规模:\n");
+    scanf("%d",&a);
+    EnQueue(Q,1);
+    for(n=2;n<=a;n++){
+        EnQueue(Q,1);
+        for(c=1;c<=n-2;c++){
+            t=GetHead(Q);
+            DeQueue(Q);
+            printf("%4d",t);
+            x=GetHead(Q);
+            t=t+x;
+            EnQueue(Q,t);   
+        }
+        EnQueue(Q,1);
+        printf("%4d",GetHead(Q));
+        DeQueue(Q);
+        printf("\n");
+    }
+    while(Q->front!=Q->rear){
+            printf("%4d",GetHead(Q));
+            DeQueue(Q);
+        }
+    return ; //第七个错 这个改为return 0;
+    }
