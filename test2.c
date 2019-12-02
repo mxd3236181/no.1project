@@ -67,6 +67,6 @@ int main(){
             printf("%4d",GetHead(Q));
             DeQueue(Q);
         }
-    return ; //第七个错 这个改为return 0;
+    return  0; 
     }
     //每位小组成员将次代码修改错误，直至完全正确。
