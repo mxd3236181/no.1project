@@ -18,14 +18,22 @@ typedef struct {
 void InitQueue(SqQueue *Q){
     
     Q->base=(QElemType *)malloc(MAXQSIZE*sizeof(QElemType));
+<<<<<<< Updated upstream
         if(!Q->base)exit(1);
+=======
+        if(!Q->base)exit(1);//0805
+>>>>>>> Stashed changes
     Q->front=Q->rear=0;
 }
 int QueueLength(SqQueue *Q){
     
     int e;
     e=(Q->rear-Q->front+MAXQSIZE)%MAXQSIZE;
+<<<<<<< Updated upstream
     return e;//zq改
+=======
+    return e;//0805
+>>>>>>> Stashed changes
 }
 void EnQueue(SqQueue *Q,QElemType e){
     
