@@ -29,7 +29,7 @@ int QueueLength(SqQueue *Q){
 }
 void EnQueue(SqQueue *Q,QElemType e){
     
-    if((Q->rear+1)%MAXQSIZE ==Q->front) exit(0); //第五个错 这个改为exit(1);
+    if((Q->rear+1)%MAXQSIZE ==Q->front) exit(1); //yy改
     Q->base[Q->rear]=e;
     Q->rear=(Q->rear+1)%MAXQSIZE;
 }
