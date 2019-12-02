@@ -1,4 +1,4 @@
-//这是杨辉三角
+  /  /这是杨辉三角
 
 #include<stdio.h>
 #include<malloc.h>
