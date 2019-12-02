@@ -1,4 +1,4 @@
-//这是杨辉三角
+﻿//这是杨辉三角
 
 #include<stdio.h>
 #include<malloc.h>
@@ -14,7 +14,7 @@ typedef struct {
 void InitQueue(SqQueue *Q){
     
     Q->base=(QElemType *)malloc(MAXQSIZE*sizeof(QElemType));
-        if(!Q->base)exit(0);//第三个错 这个改为 if(!Q->base)exit(1);
+        if(!Q->base)exit(1);
     Q->front=Q->rear=0;
 }
 int QueueLength(SqQueue *Q){
