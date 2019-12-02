@@ -8,7 +8,7 @@
 typedef int QElemType;
 typedef struct {
     QElemType  *base;
-    int frt;
+    int front;
     int rar;//第二个错 这个改为 int rear;
 }SqQueue;
 void InitQueue(SqQueue *Q){
