@@ -25,7 +25,7 @@ int QueueLength(SqQueue *Q){
     
     int e;
     e=(Q->rear-Q->front+MAXQSIZE)%MAXQSIZE;
-    return e;
+    return e;//zq改
 }
 void EnQueue(SqQueue *Q,QElemType e){
     
