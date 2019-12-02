@@ -1,4 +1,8 @@
+<<<<<<< HEAD
   /  /这是杨辉三角
+=======
+﻿//这是杨辉三角
+>>>>>>> 71013c1019c2b71887288cabe2dbcb67158f7da4
 
 #include<stdio.h>
 #include<malloc.h>
@@ -14,7 +18,7 @@ typedef struct {
 void InitQueue(SqQueue *Q){
     
     Q->base=(QElemType *)malloc(MAXQSIZE*sizeof(QElemType));
-        if(!Q->base)exit(0);//第三个错 这个改为 if(!Q->base)exit(1);
+        if(!Q->base)exit(1);
     Q->front=Q->rear=0;
 }
 int QueueLength(SqQueue *Q){
@@ -67,6 +71,6 @@ int main(){
             printf("%4d",GetHead(Q));
             DeQueue(Q);
         }
-    return ; //第七个错 这个改为return 0;
+    return  0; 
     }
     //每位小组成员将次代码修改错误，直至完全正确。
