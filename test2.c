@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
   /  /这是杨辉三角
-=======
+
 ﻿//这是杨辉三角
->>>>>>> 71013c1019c2b71887288cabe2dbcb67158f7da4
+
 
 #include<stdio.h>
 #include<malloc.h>
