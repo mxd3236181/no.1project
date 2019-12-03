@@ -16,7 +16,7 @@ typedef struct {
     int front;
     int rear;
 
-    int front;//第一个错 这个改为 int front pj改;
+    int front;//第一个错 这个改为 int front  pj改;
     int rar;//第二个错 这个改为 int rear;
 
 }SqQueue;
