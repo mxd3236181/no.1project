@@ -36,7 +36,7 @@ void EnQueue(SqQueue *Q,QElemType e){
 void DeQueue(SqQueue *Q){
     
     if(Q->front==Q->rear)
-        exit(0); //第六个错 这个改为exit(1);
+        exit(1); //pu
     //e=Q.base[Q.front];
     Q->front=(Q->front+1)%MAXQSIZE;
 }
